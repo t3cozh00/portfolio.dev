@@ -27,9 +27,9 @@ const Nav = ({ openNav }: Props) => {
 
   return (
     <div
-      className={`transition-all ${
-        navBg ? "bg-[#0f142ed9] shadow-md" : "fixed"
-      } duration-200 h-[12vh] z-[10000] fixed w-full`}
+      className={`transition-all duration-200 h-[12vh] z-[10000] fixed w-full ${
+        navBg ? "bg-[#0f142ed9] shadow-md " : "fixed"
+      }`}
     >
       <div className="flex items-center h-full justify-between w-[90%] mx-auto">
         {/* LOGO */}
@@ -40,8 +40,10 @@ const Nav = ({ openNav }: Props) => {
           <h1 className="text-xl hidden sm:block md:text-2xl text-white font-bold">
             CONGYING
           </h1>
-          {/* navlinks */}
-          <div className="hidden lg:flex items-center space-x-10">
+        </div>
+        {/* navlinks */}
+        <div className="hidden lg:flex justify-center">
+          <div className="flex items-center space-x-10">
             {NavLinks.map((link) => {
               return (
                 <Link
@@ -54,19 +56,19 @@ const Nav = ({ openNav }: Props) => {
               );
             })}
           </div>
-          {/* buttons */}
-          <div className="flex items-center space-x-4">
-            {/* cv button */}
-            <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2">
-              <BiDownload className="w-5 h-5" />
-              <span>Download CV</span>
-            </button>
-            {/* burger menu */}
-            <HiBars3BottomRight
-              onClick={openNav}
-              className="w-8 h-8 cursor-pointer text-white lg:hidden"
-            />
-          </div>
+        </div>
+        {/* buttons */}
+        <div className="flex items-center space-x-4">
+          {/* cv button */}
+          <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2">
+            <BiDownload className="w-5 h-5" />
+            <span>Download CV</span>
+          </button>
+          {/* burger menu */}
+          <HiBars3BottomRight
+            onClick={openNav}
+            className="w-8 h-8 cursor-pointer text-white lg:hidden"
+          />
         </div>
       </div>
     </div>
