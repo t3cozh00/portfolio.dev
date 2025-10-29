@@ -2,6 +2,7 @@ import React from "react";
 import ResumeCard from "./ResumeCard";
 import { FaCodepen, FaReact } from "react-icons/fa";
 import { BsDatabase } from "react-icons/bs";
+import { BiBadge } from "react-icons/bi";
 
 const Resume = () => {
   return (
@@ -13,15 +14,45 @@ const Resume = () => {
             My Work <span className="text-cyan-200">Experience</span>
           </h1>
 
-          <div className="mt-10">
+          {/* <div
+            className="mt-10"
+            data-aos="zoom-in"
+            data-aos-anchor-placement="top-center"
+          >
             <ResumeCard Icon={FaCodepen} role="Full-Stack Developer" />
             <ResumeCard Icon={FaReact} role="Frontend Developer" />
             <ResumeCard Icon={BsDatabase} role="Backend Developer" />
-          </div>
+          </div> */}
         </div>
 
         {/* education part */}
-        <div>education part</div>
+        <div>
+          <h1 className="text-4xl sm:text-4xl font-bold text-white">
+            My <span className="text-cyan-200">Education</span>
+          </h1>
+          <div
+            className="mt-10"
+            data-aos="zoom-out"
+            data-aos-anchor-placement="top-center"
+            data-aos-delay="300"
+          >
+            <ResumeCard
+              Icon={BiBadge}
+              role="Design Institue of Technology"
+              date="Jan2023 - Dec 2023"
+            />
+            <ResumeCard
+              Icon={FaReact}
+              role="Bachelor of Computer Science"
+              date="Jan2019 - Dec 2022"
+            />
+            <ResumeCard
+              Icon={BsDatabase}
+              role="Certificate in Design"
+              date="Jan2015 - Dec 2019"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

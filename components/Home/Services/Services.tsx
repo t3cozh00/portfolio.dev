@@ -9,7 +9,7 @@ const Services = () => {
         results.
       </h1>
       <div className="w-[90%] sm:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 mt-20 items-center">
-        <div>
+        <div data-aos="fade-right" data-aos-anchor-placement="top-center">
           <ServiceCard
             icon="/images/s1.png"
             name="UI and UX Design"
@@ -17,21 +17,33 @@ const Services = () => {
         and experiences for digital products."
           />
         </div>
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="100"
+        >
           <ServiceCard
             icon="/images/s2.png"
             name="Web and Mobile Development"
             description="Building responsive and high-performance web and mobile applications."
           />
         </div>
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="200"
+        >
           <ServiceCard
             icon="/images/s3.png"
             name="Design and creative"
             description="Crafting visually appealing designs"
           />
         </div>
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="300"
+        >
           <ServiceCard
             icon="/images/s4.png"
             name="Development"
