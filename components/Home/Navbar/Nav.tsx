@@ -37,7 +37,7 @@ const Nav = ({ openNav }: Props) => {
           <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-col">
             <FaCode className="w-5 h-5 text-black" />
           </div>
-          <h1 className="text-xl hidden sm:block md:text-2xl text-white font-bold">
+          <h1 className="text-xl hidden sm:block md:text-2xl text-white font-bold text-primary">
             CONGYING
           </h1>
         </div>
@@ -49,7 +49,7 @@ const Nav = ({ openNav }: Props) => {
                 <Link
                   key={link.id}
                   href={link.url}
-                  className="text-base hover:text-cyan-300 text-white font-medium transition-all duration-200"
+                  className="text-base hover:text-primary text-white font-medium transition-all duration-200"
                 >
                   <p>{link.label}</p>
                 </Link>
@@ -60,7 +60,7 @@ const Nav = ({ openNav }: Props) => {
         {/* buttons */}
         <div className="flex items-center space-x-4">
           {/* cv button */}
-          <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2">
+          <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lgtransition-all duration-300 text-white flex items-center space-x-2 cosmic-button">
             <BiDownload className="w-5 h-5" />
             <span>Download CV</span>
           </button>

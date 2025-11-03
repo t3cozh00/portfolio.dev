@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
-import { BsArrowRight } from "react-icons/bs";
+
 import ParticlesHero from "./ParticleBackground";
 
 const Hero = () => {
@@ -12,14 +11,14 @@ const Hero = () => {
       <ParticlesHero />
       <div className="relative z-10 flex flex-col items-center">
         <Image
-          src="/images/profile.png"
+          src="/images/avatar3.png"
           alt="profile"
           width={200}
           height={200}
           className="rounded-full border-8 border-[#0c0c48aa]"
           data-aos="fade-up"
         />
-        <h1
+        {/* <h1
           data-aos="fade-up"
           data-aos-delay="200"
           className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 text-center tracking-wide"
@@ -27,14 +26,14 @@ const Hero = () => {
           Creating web products,
           <br />
           <span className="text-cyan-200"> brands, and experiences.</span>
-        </h1>
+        </h1> */}
         <h2
           data-aos="fade-up"
           data-aos-delay="400"
           className="mt-5 text-sm px-2 text-center sm:text-2xl font-medium flex items-center"
         >
           Hi, I&apos;m Congying - A Passionate
-          <span className="text-cyan-200 font-bold">
+          <span className="text-primary font-bold">
             <Typewriter
               options={{
                 strings: [
@@ -52,14 +51,19 @@ const Hero = () => {
             />
           </span>
         </h2>
-        <button
-          data-aos="fade-up"
-          data-aos-delay="600"
-          className="mt-6 px-10 py-4 bg-blue-800 hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-lg font-medium"
+      </div>
+      <div className="mt-5 flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+        <a href="#contact" className="cosmic-button">
+          {" "}
+          Get in touch
+        </a>
+
+        <a
+          href="#projects"
+          className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
         >
-          <span>See my work</span>
-          <BsArrowRight className="w-5 h-5 ml-2 inline-block" />
-        </button>
+          View projects
+        </a>
       </div>
     </div>
   );

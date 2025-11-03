@@ -1,90 +1,92 @@
 import React from "react";
+import { ArrowRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+import { LuExternalLink } from "react-icons/lu";
 import Image from "next/image";
+import { projectList } from "@/constant/constant";
 
-const Project = () => {
+const Projects = () => {
   return (
-    <div className="pt-16 pb-16">
-      <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
-        A small selection of recent
-        <br />
-        <span className="span-cyan-300">Projects</span>
-      </h1>
-      <div className="w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
-        {/* 1st project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="0"
-        >
-          <Image
-            src="/images/p1.jpg"
-            alt="img"
-            width={800}
-            height={650}
-            className="rounded-lg"
-          />
-          <h1 className="mt-4 text-xl sm:tet-2xl font-semibold text-white">
-            Modern Finance Dashboard UI
-          </h1>
-          <h1 className="pt-2 font-medium text-white/80">Apps, UI/UX</h1>
+    <section id="project" className="py-12 md: py-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          {" "}
+          Featured <span className="text-primary"> Projects </span>
+        </h2>
+
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Here are some of my recent projects. Each one is built with care and
+          attention to detail.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projectList.map((project) => (
+            <div
+              key={project.id}
+              className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <div className="h-48 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                />
+              </div>
+
+              <div className="p-5">
+                <h3 className="text-lg text-xl font-bold mb-2-semibold">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block bg-gray-100 text-gray-500 text-xs font-medium mr-2 px-2 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    className="flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                  >
+                    {" "}
+                    <FaGithub size={16} />
+                    <p>Code</p>
+                  </a>
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    className="flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                  >
+                    {" "}
+                    <LuExternalLink size={16} />
+                    <p>Live Demo</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        {/* 2nd project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="100"
-        >
-          <Image
-            src="/images/p2.jpg"
-            alt="img"
-            width={800}
-            height={650}
-            className="rounded-lg"
-          />
-          <h1 className="mt-4 text-xl sm:tet-2xl font-semibold text-white">
-            Portfolio Website for Creative
-          </h1>
-          <h1 className="pt-2 font-medium text-white/80">Branding, Motion</h1>
-        </div>
-        {/* 3rd project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/images/p3.jpg"
-            alt="img"
-            width={800}
-            height={650}
-            className="rounded-lg"
-          />
-          <h1 className="mt-4 text-xl sm:tet-2xl font-semibold text-white">
-            Brand Identity for Startups
-          </h1>
-          <h1 className="pt-2 font-medium text-white/80">Branding, UI/UX</h1>
-        </div>
-        {/* 4th project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="400"
-        >
-          <Image
-            src="/images/p4.jpg"
-            alt="img"
-            width={800}
-            height={650}
-            className="rounded-lg"
-          />
-          <h1 className="mt-4 text-xl sm:tet-2xl font-semibold text-white">
-            SaaS Dashboard Development
-          </h1>
-          <h1 className="pt-2 font-medium text-white/80">Apps, UI/UX</h1>
+        <div className="text-center mt-12">
+          <a
+            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            target="_blank"
+            href="https://github.com/t3cozh00"
+          >
+            Check My Github <ArrowRight size={16} />
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Project;
+export default Projects;

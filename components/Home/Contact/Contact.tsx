@@ -16,18 +16,25 @@ const Contact = () => {
           </p>
           {/* info */}
           <div className="mt-7">
-            <div className="flex items-center space-x-3 mb-4">
-              <BiPhone className="w-9 h-9 text-cyan-300" />
+            <div className="flex items-center space-x-5 mb-4">
+              <div className="p-3 rounded-full bg-primary/10">
+                <BiPhone className="w-6 h-6 text-primary" />
+              </div>
+
               <p className="text-xl font-bold text-gray-400">+123456790</p>
             </div>
-            <div className="flex items-center space-x-3 mb-4">
-              <BiEnvelope className="w-9 h-9 text-cyan-300" />
+            <div className="flex items-center space-x-5 mb-4">
+              <div className="p-3 rounded-full bg-primary/10">
+                <BiEnvelope className="w-6 h-6 text-primary" />
+              </div>
               <p className="text-xl font-bold text-gray-400">
                 hello@example.com
               </p>
             </div>
-            <div className="flex items-center space-x-3 mb-4">
-              <BiMap className="w-9 h-9 text-cyan-300" />
+            <div className="flex items-center space-x-5 mb-4">
+              <div className="p-3 rounded-full bg-primary/10">
+                <BiMap className="w-6 h-6 text-primary" />
+              </div>
               <p className="text-xl font-bold text-gray-400">
                 123 Main St, Anytown, USA
               </p>
@@ -35,16 +42,16 @@ const Contact = () => {
           </div>
           {/* social icons */}
           <div className="flex items-center mt-8 space-x-3">
-            <div className="w-14 h-14 bg-blue-950/60 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300">
+            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300">
               <FaFacebookF className="text-white w-6 h-6" />
             </div>
-            <div className="w-14 h-14 bg-blue-950/60 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-red-600 transition-all duration-300">
+            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-red-600 transition-all duration-300">
               <FaYoutube className="text-white w-6 h-6" />
             </div>
-            <div className="w-14 h-14 bg-blue-950/60 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-sky-400 transition-all duration-300">
+            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-sky-400 transition-all duration-300">
               <FaTwitter className="text-white w-6 h-6" />
             </div>
-            <div className="w-14 h-14 bg-blue-950/60 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-pink-500 transition-all duration-300">
+            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-pink-500 transition-all duration-300">
               <FaInstagram className="text-white w-6 h-6" />
             </div>
           </div>
@@ -75,7 +82,7 @@ const Contact = () => {
             placeholder="Your message"
             className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 h-[10rem]"
           ></textarea>
-          <button className="mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all duration-300 cursor-pointer text-white rounded-full">
+          <button className="mt-8 px-12 py-4 cosmic-button transition-all duration-300 cursor-pointer text-white rounded-full">
             Send Message
           </button>
         </div>

@@ -1,47 +1,62 @@
 "use client";
 import React from "react";
-import {
-  SiJavascript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+import { skillList } from "@/constant/skillList";
 import Tilt from "react-parallax-tilt";
 
-const skills = [
-  { name: "JavaScript", icon: <SiJavascript />, percentage: 89 },
-  { name: "React", icon: <SiReact />, percentage: 92 },
-  { name: "Next.js", icon: <SiNextdotjs />, percentage: 90 },
-  { name: "Node.js", icon: <SiNodedotjs />, percentage: 88 },
-  { name: "Tailwind CSS", icon: <SiTailwindcss />, percentage: 94 },
-  { name: "TypeScript", icon: <SiTypescript />, percentage: 95 },
+const categories = [
+  { title: "Frontend", key: "frontend" },
+  { title: "Backend", key: "backend" },
+  { title: "Tools & Others", key: "tools" },
 ];
+
+function Progress({ value }: { value: number }) {
+  return (
+    <div className="w-full h-2 rounded-full bg-gray-200/80">
+      <div
+        className="h-2 rounded-full bg-primary"
+        style={{ width: `${Math.min(Math.max(value, 0), 100)}%` }}
+      />
+    </div>
+  );
+}
 
 const Skills = () => {
   return (
-    <div className="text-white pt-16 pb-16">
-      <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
-        My <span className="text-cyan-300">Skills</span>
-      </h1>
-      <div className="flex flex-wrap justify-center gap-6 mt-16">
-        {skills.map((skil, i) => {
-          return (
-            <Tilt key={skil.name} scale={1.5} transitionSpeed={400}>
-              <div
-                data-aos="flip-right"
-                data-aos-anchor-placement="top-center"
-                data-aos-delay={i * 100}
-                className="bg-[#14134145] text-center w-40 h-48 rounded-3xl flex flex-col items-center justify-center shadow-lg transition hover:scale-100"
-              >
-                <div className="text-5xl mb-4 text-gray-300 ">{skil.icon}</div>
-                <p className="text-2xl font-semibold">{skil.percentage}%</p>
-                <p className="text-purple-400 mt-1">{skil.name}</p>
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+      <div className="text-white pt-16 pb-16">
+        <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
+          Skills &amp; Expertise
+        </h2>
+        <p className="max-w-2xl mx-auto text-gray-600 text-lg mt-4 text-center">
+          Here are the technologies and tools I work with regularly.
+        </p>
+
+        <div className="space-y-12 mt-10">
+          {categories.map(({ title, key }) => {
+            const items = skillList.filter((s) => s.category === key);
+            return (
+              <div key={key}>
+                <h3 className="text-2xl font-bold mb-8">{title}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                  {items.map((skil) => (
+                    <div
+                      key={skil.name}
+                      className="bg-white rounded-lg p-4 shadow-md flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                    >
+                      <div className="text-5xl text-foreground" aria-hidden>
+                        {skil.icon}
+                      </div>
+                      <h4 className="font-bold tracking-tight text-foreground whitespace-nowrap m-3">
+                        {skil.name}
+                      </h4>
+                      <Progress value={skil.percentage} />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </Tilt>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
