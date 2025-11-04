@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
-const SrollToTop = () => {
+const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   // show and hide scroll to top button based on scroll position
@@ -27,7 +27,7 @@ const SrollToTop = () => {
     <div className="fixed bottom-4 animate-pulse right-4">
       {isVisible && (
         <button
-          className="bg-blue-950/60 cursor-pointer text-white rounded-full w-12 h-12 flex items-center justify-center focus:outline-none"
+          className="bg-blue-950/60 cursor-pointer text-white rounded-full w-12 h-12 flex items-center justify-center focus:outline-none bg-primary/10 hover:bg-primary/20"
           onClick={scrollToTop}
         >
           <FaArrowUp />
@@ -37,4 +37,4 @@ const SrollToTop = () => {
   );
 };
 
-export default SrollToTop;
+export default ScrollToTop;

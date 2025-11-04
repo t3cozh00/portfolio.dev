@@ -1,9 +1,11 @@
 "use client";
 
 import { NavLinks } from "@/constant/constant";
+import { ThemeToggle } from "./ThemeToggle";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaCode } from "react-icons/fa";
+
 import { BiDownload } from "react-icons/bi";
 import { HiBars3BottomRight } from "react-icons/hi2";
 
@@ -60,10 +62,14 @@ const Nav = ({ openNav }: Props) => {
         {/* buttons */}
         <div className="flex items-center space-x-4">
           {/* cv button */}
-          <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lgtransition-all duration-300 text-white flex items-center space-x-2 cosmic-button">
+          <button className="px-4 py-3.5 text-sm cursor-pointer rounded-lg transition-all duration-300 text-white flex items-center space-x-2 cosmic-button">
             <BiDownload className="w-5 h-5" />
             <span>Download CV</span>
           </button>
+
+          {/* Theme toggle */}
+          <ThemeToggle />
+
           {/* burger menu */}
           <HiBars3BottomRight
             onClick={openNav}
