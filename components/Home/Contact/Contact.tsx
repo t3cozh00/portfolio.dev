@@ -1,93 +1,150 @@
 import React from "react";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
+import { LuSend } from "react-icons/lu";
 
 const Contact = () => {
   return (
-    <div className="pt-16 pb-16">
-      <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        {/* text content */}
-        <div>
-          <h1 className="text-3xl sm:text-4l lg:text-5xl font-bold text-gray-200">
-            Schedule a call with me to see if I can help
-          </h1>
-          <p className="text-gray-400 mt-6 text-base sm:text-lg">
-            Reach out to me today and let&apos;s discuss how I can assist you.
+    <section
+      id="contact"
+      className="container mx-auto px-4 md:px-6 lg:px-8 pt-15 relative"
+    >
+      <div className="pt-16 pb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-foreground">
+            Get In <span className="text-primary">Touch</span>
+          </h2>
+          <p className="max-w-2xl mx-auto text-foreground/80 text-lg mt-4 text-center">
+            Feel free to reach out if you have any questions or would like to
+            work together.
           </p>
-          {/* info */}
-          <div className="mt-7">
-            <div className="flex items-center space-x-5 mb-4">
-              <div className="p-3 rounded-full bg-primary/10">
-                <BiPhone className="w-6 h-6 text-primary" />
-              </div>
-
-              <p className="text-xl font-bold text-gray-400">+123456790</p>
-            </div>
-            <div className="flex items-center space-x-5 mb-4">
-              <div className="p-3 rounded-full bg-primary/10">
-                <BiEnvelope className="w-6 h-6 text-primary" />
-              </div>
-              <p className="text-xl font-bold text-gray-400">
-                hello@example.com
-              </p>
-            </div>
-            <div className="flex items-center space-x-5 mb-4">
-              <div className="p-3 rounded-full bg-primary/10">
-                <BiMap className="w-6 h-6 text-primary" />
-              </div>
-              <p className="text-xl font-bold text-gray-400">
-                123 Main St, Anytown, USA
-              </p>
-            </div>
-          </div>
-          {/* social icons */}
-          <div className="flex items-center mt-8 space-x-3">
-            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300">
-              <FaFacebookF className="text-white w-6 h-6" />
-            </div>
-            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-red-600 transition-all duration-300">
-              <FaYoutube className="text-white w-6 h-6" />
-            </div>
-            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-sky-400 transition-all duration-300">
-              <FaTwitter className="text-white w-6 h-6" />
-            </div>
-            <div className="w-14 h-14 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-pink-500 transition-all duration-300">
-              <FaInstagram className="text-white w-6 h-6" />
-            </div>
-          </div>
         </div>
-        {/* form */}
-        <div
-          data-aos="zoom-in"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="0"
-          className="md:px-10 p-5 bg-[#131332] rounded-lg"
-        >
-          <input
-            type="text"
-            placeholder="Name"
-            className="px-4 py-3.5 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70"
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70"
-          />
-          <input
-            type="text"
-            placeholder="Mobile Number"
-            className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70"
-          />
-          <textarea
-            placeholder="Your message"
-            className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 h-[10rem]"
-          ></textarea>
-          <button className="mt-8 px-12 py-4 cosmic-button transition-all duration-300 cursor-pointer text-white rounded-full">
-            Send Message
-          </button>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 ">
+            <div className="bg-card border border-border rounded-lg shadow-md p-6">
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Send a Message
+              </h3>
+              <form>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block mb-2 text-foreground/80"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block mb-2 text-foreground/80"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                </div>
+                <div className="mb-6">
+                  <label
+                    htmlFor="subject"
+                    className="text-base block mb-2 text-foreground/80"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    required
+                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                    placeholder="Project Inquiry"
+                  />
+                </div>
+                <div className="mb-6">
+                  <label
+                    htmlFor="message"
+                    className="text-base block mb-2 text-foreground/80"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    required
+                    rows={5}
+                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                    placeholder="Your message here..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="cosmic-button flex items-center justify-center gap-2"
+                >
+                  Send Message
+                  <LuSend size={16} />
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="h-full">
+            <div className="h-full bg-card border border-border rounded-lg shadow-md p-6 flex flex-col">
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                Contact Information
+              </h3>
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-primary/10">
+                    <BiPhone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-0.5">Phone</h4>
+                    <p className="font-bold text-gray-500">+123456790</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-primary/10">
+                    <BiEnvelope className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-0.5">Email</h4>
+                    <p className="font-bold text-gray-500">email@example.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-primary/10">
+                    <BiMap className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-0.5">Location</h4>
+                    <p className="font-bold text-gray-500">Helsinki, Finland</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-12">
+                <h4 className="text-xl font-bold mb-6">Working Hours</h4>
+                <div className="text-foreground/80 space-y-2">
+                  <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                  <p>Weekend: Available for urgent matters</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

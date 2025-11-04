@@ -2,13 +2,19 @@
 
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
-
 import ParticlesHero from "./ParticleBackground";
+import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 
 const Hero = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center text-white overflow-hidden flex-col">
-      <ParticlesHero />
+    <section
+      id="hero"
+      className="relative h-screen flex items-center justify-center overflow-hidden flex-col pt-20"
+    >
+      <div className="hidden dark:block -z-10">
+        <ParticlesHero />
+      </div>
+
       <div className="relative z-10 flex flex-col items-center">
         <Image
           src="/images/avatar3.png"
@@ -30,7 +36,7 @@ const Hero = () => {
         <h2
           data-aos="fade-up"
           data-aos-delay="400"
-          className="mt-5 text-sm px-2 text-center sm:text-2xl font-medium flex items-center"
+          className="mt-5 text-sm px-2 text-center sm:text-2xl text-foreground font-bold flex items-center"
         >
           Hi, I&apos;m Congying - A Passionate
           <span className="text-primary font-bold">
@@ -52,12 +58,11 @@ const Hero = () => {
           </span>
         </h2>
       </div>
-      <div className="mt-5 flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+      <div className="mt-5 flex flex-col sm:flex-row gap-4 pt-4 justify-center relative z-10">
         <a href="#contact" className="cosmic-button">
           {" "}
           Get in touch
         </a>
-
         <a
           href="#projects"
           className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
@@ -65,7 +70,11 @@ const Hero = () => {
           View projects
         </a>
       </div>
-    </div>
+      <div className="absolute bottom-8 right-8 flex flex-col items-center animate-bounce">
+        <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
+        <MdOutlineKeyboardDoubleArrowDown className="h-5 w-5 text-primary" />
+      </div>
+    </section>
   );
 };
 

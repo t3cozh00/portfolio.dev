@@ -1,14 +1,15 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaArrowRight } from "react-icons/fa6";
 import { LuExternalLink } from "react-icons/lu";
 import Image from "next/image";
 import { projectList } from "@/constant/constant";
 
 const Projects = () => {
   return (
-    <section id="project" className="py-12 md: py-20">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+    <section
+      id="projects"
+      className="container mx-auto px-4 md:px-6 lg:px-8 pt-15 relative"
+    >
+      <div className="pt-16 pb-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           {" "}
           Featured <span className="text-primary"> Projects </span>
@@ -22,7 +23,7 @@ const Projects = () => {
           {projectList.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="bg-card border border-border rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <div className="h-48 overflow-hidden">
                 <Image
@@ -81,7 +82,7 @@ const Projects = () => {
             target="_blank"
             href="https://github.com/t3cozh00"
           >
-            Check My Github <ArrowRight size={16} />
+            Check My Github <FaArrowRight size={16} />
           </a>
         </div>
       </div>

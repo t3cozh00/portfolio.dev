@@ -24,16 +24,22 @@ export const ThemeToggle = () => {
 
   return (
     <div>
-      <div className="bg-zinc-100 rounded-xl p-2 ">
+      <div className="relative z-50 flex items-center -space-x-1 rounded-lg ml-2">
         <button
           onClick={() => setIsDarkMode(false)}
-          className="bg-transparent p-2 hover:bg-zinc-200 rounded-lg text-black"
+          aria-label="Light mode"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg
+          text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          title="Light mode"
         >
           <LuSun />
         </button>
         <button
           onClick={() => setIsDarkMode(true)}
-          className="bg-transparent p-2 hover:bg-zinc-200 rounded-lg text-black"
+          aria-label="Dark mode"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg
+          text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          title="Dark mode"
         >
           <LuMoon />
         </button>

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { skillList } from "@/constant/skillList";
-import Tilt from "react-parallax-tilt";
+import { skillList } from "@/constant/constant";
 
 const categories = [
   { title: "Frontend", key: "frontend" },
@@ -22,12 +21,15 @@ function Progress({ value }: { value: number }) {
 
 const Skills = () => {
   return (
-    <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <div className="text-white pt-16 pb-16">
-        <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
-          Skills &amp; Expertise
+    <section
+      id="skills"
+      className="container mx-auto px-4 md:px-6 lg:px-8 pt-15 relative"
+    >
+      <div className="pt-16 pb-16">
+        <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-foreground">
+          Skills &amp; <span className="text-primary">Expertise</span>
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-600 text-lg mt-4 text-center">
+        <p className="max-w-2xl mx-auto text-foreground/80 text-lg mt-4 text-center">
           Here are the technologies and tools I work with regularly.
         </p>
 
@@ -41,7 +43,7 @@ const Skills = () => {
                   {items.map((skil) => (
                     <div
                       key={skil.name}
-                      className="bg-white rounded-lg p-4 shadow-md flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                      className="bg-card border border-border rounded-lg p-4 shadow-xs dark:shadow-[0_1px_0_rgba(255,255,255,0.04)] card-hover flex flex-col items-center text-center  "
                     >
                       <div className="text-5xl text-foreground" aria-hidden>
                         {skil.icon}
@@ -58,7 +60,7 @@ const Skills = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
