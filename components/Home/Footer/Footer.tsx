@@ -1,4 +1,4 @@
-import React from "react";
+import { cn } from "@/components/lib/utils";
 import { FaLinkedin, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { NavLinks } from "@/constant/constant";
 import Link from "next/link";
@@ -23,7 +23,9 @@ const Footer = () => {
                   <Link
                     key={link.id}
                     href={link.href}
-                    className="text-base text-foreground/80 hover:text-primary transition-colors duration-300"
+                    className={cn(
+                      "text-base text-foreground/80 hover:text-primary transition-colors duration-300"
+                    )}
                   >
                     <p>{link.label}</p>
                   </Link>
@@ -34,23 +36,41 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300">
+              <div
+                className={cn(
+                  "w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300"
+                )}
+              >
                 <FaLinkedin className="text-white w-4 h-4" />
               </div>
-              <div className="w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-red-600 transition-all duration-300">
+              <div
+                className={cn(
+                  "w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-red-600 transition-all duration-300"
+                )}
+              >
                 <FaYoutube className="text-white w-4 h-4" />
               </div>
-              <div className="w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-sky-400 transition-all duration-300">
+              <div
+                className={cn(
+                  "w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-sky-400 transition-all duration-300"
+                )}
+              >
                 <FaTwitter className="text-white w-4 h-4" />
               </div>
-              <div className="w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-pink-500 transition-all duration-300">
+              <div
+                className={cn(
+                  "w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-pink-500 transition-all duration-300"
+                )}
+              >
                 <FaInstagram className="text-white w-4 h-4" />
               </div>
             </div>
             <div className="mt-4">
               <a
                 href="mailto:contact@example.com"
-                className=" text-foreground/80 hover:text-primary transition-colors duration-300"
+                className={cn(
+                  " text-foreground/80 hover:text-primary transition-colors duration-300"
+                )}
               >
                 contact@example.com
               </a>

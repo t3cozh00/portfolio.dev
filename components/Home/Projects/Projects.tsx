@@ -2,6 +2,7 @@ import { FaGithub, FaArrowRight } from "react-icons/fa6";
 import { LuExternalLink } from "react-icons/lu";
 import Image from "next/image";
 import { projectList } from "@/constant/constant";
+import { cn } from "@/components/lib/utils";
 
 const Projects = () => {
   return (
@@ -23,7 +24,9 @@ const Projects = () => {
           {projectList.map((project) => (
             <div
               key={project.id}
-              className="bg-card border border-border rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className={cn(
+                "bg-card border border-border rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              )}
             >
               <div className="h-48 overflow-hidden">
                 <Image
@@ -46,7 +49,9 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-block bg-gray-100 text-gray-500 text-xs font-medium mr-2 px-2 py-1 rounded-full"
+                      className={cn(
+                        "inline-block bg-gray-100 text-gray-500 text-xs font-medium mr-2 px-2 py-1 rounded-full"
+                      )}
                     >
                       {tag}
                     </span>
@@ -56,7 +61,9 @@ const Projects = () => {
                   <a
                     href={project.githubUrl}
                     target="_blank"
-                    className="flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                    className={cn(
+                      "flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                    )}
                   >
                     {" "}
                     <FaGithub size={16} />
@@ -65,7 +72,9 @@ const Projects = () => {
                   <a
                     href={project.demoUrl}
                     target="_blank"
-                    className="flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                    className={cn(
+                      "flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                    )}
                   >
                     {" "}
                     <LuExternalLink size={16} />

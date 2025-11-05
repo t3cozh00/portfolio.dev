@@ -1,6 +1,5 @@
-import React from "react";
+import { cn } from "@/components/lib/utils";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
-
 import { LuSend } from "react-icons/lu";
 
 const Contact = () => {
@@ -39,7 +38,9 @@ const Contact = () => {
                       type="text"
                       id="name"
                       required
-                      className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                      className={cn(
+                        "w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                      )}
                       placeholder="Enter your name"
                     />
                   </div>
@@ -54,7 +55,9 @@ const Contact = () => {
                       type="email"
                       id="email"
                       required
-                      className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                      className={cn(
+                        "w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                      )}
                       placeholder="Enter your email"
                     />
                   </div>
@@ -70,7 +73,9 @@ const Contact = () => {
                     type="text"
                     id="subject"
                     required
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                    className={cn(
+                      "w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                    )}
                     placeholder="Project Inquiry"
                   />
                 </div>
@@ -85,7 +90,9 @@ const Contact = () => {
                     id="message"
                     required
                     rows={5}
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                    className={cn(
+                      "w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600/50"
+                    )}
                     placeholder="Your message here..."
                   />
                 </div>

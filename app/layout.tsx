@@ -23,7 +23,7 @@ const noFlashScript = `
 `;
 
 export const metadata: Metadata = {
-  title: "Congying Zhao Portfolio",
+  title: "Congying Zhao | Full-Stack Developer",
   description: "Portfolio built with Next.js 15, TypeScript & Tailwind CSS",
 };
 

@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/components/lib/utils";
 import { LuSun, LuMoon } from "react-icons/lu";
 import { useEffect, useState } from "react";
 
@@ -28,8 +29,9 @@ export const ThemeToggle = () => {
         <button
           onClick={() => setIsDarkMode(false)}
           aria-label="Light mode"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg
-          text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          className={cn(
+            "inline-flex h-9 w-9 items-center justify-center rounded-lg text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          )}
           title="Light mode"
         >
           <LuSun />
@@ -37,8 +39,9 @@ export const ThemeToggle = () => {
         <button
           onClick={() => setIsDarkMode(true)}
           aria-label="Dark mode"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg
-          text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          className={cn(
+            "inline-flex h-9 w-9 items-center justify-center rounded-lg text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+          )}
           title="Dark mode"
         >
           <LuMoon />

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { cn } from "@/components/lib/utils";
 import { skillList } from "@/constant/constant";
 
 const categories = [
@@ -43,7 +43,9 @@ const Skills = () => {
                   {items.map((skil) => (
                     <div
                       key={skil.name}
-                      className="bg-card border border-border rounded-lg p-4 shadow-xs dark:shadow-[0_1px_0_rgba(255,255,255,0.04)] card-hover flex flex-col items-center text-center  "
+                      className={cn(
+                        "bg-card border border-border rounded-lg p-4 shadow-xs dark:shadow-[0_1px_0_rgba(255,255,255,0.04)] card-hover flex flex-col items-center text-center"
+                      )}
                     >
                       <div className="text-5xl text-foreground" aria-hidden>
                         {skil.icon}
