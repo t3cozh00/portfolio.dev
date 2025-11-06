@@ -4,8 +4,6 @@ import { NavLinks } from "@/constant/constant";
 import { ThemeToggle } from "./ThemeToggle";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { FaCode } from "react-icons/fa";
-
 import { HiBars3BottomRight } from "react-icons/hi2";
 import Image from "next/image";
 
@@ -49,14 +47,6 @@ const Nav = ({ openNav }: Props) => {
           </div>
         </Link>
 
-        {/* <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center flex-col">
-            <FaCode className="w-5 h-5 text-foreground" />
-          </div>
-          <h1 className="text-xl hidden sm:block md:text-2xl text-foreground  font-bold">
-            DevPortfolio
-          </h1>
-        </div> */}
         {/* navlinks */}
         <div className="hidden lg:flex justify-center">
           <div className="flex items-center space-x-10">

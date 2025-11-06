@@ -12,7 +12,7 @@ const Hero = () => {
     <section
       id="hero"
       className={cn(
-        "relative h-screen flex items-center justify-center overflow-hidden flex-col pt-20"
+        "relative flex items-center justify-center overflow-hidden flex-col pt-35 mx-auto px-4 md:px-6 lg:px-8"
       )}
     >
       <div className="hidden dark:block -z-10">
@@ -24,11 +24,26 @@ const Hero = () => {
         {/* left content */}
         <div className="order-1 lg:order-1">
           <h1 className="font-extrabold tracking-tight text-4xl sm:text-5xl xl:text-6xl text-foreground whitespace-nowrap">
-            Hi, I&apos;m Con
+            Hello! I&apos;m Zoey
           </h1>
 
-          <h2 className="mt-5 text-2xl sm:text-3xl font-semibold text-foreground/90">
-            Full Stack Developer
+          <h2 className="mt-5 text-2xl sm:text-3xl font-semibold">
+            <span className="text-primary/90 font-bold">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Web Developer.",
+                    "MERN Stack Developer.",
+                    "Full Stack Developer.",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 40,
+                  wrapperClassName: "pl-2",
+                }}
+              />
+            </span>
           </h2>
 
           <p className="mt-5 max-w-xl text-foreground/70 leading-relaxed">
@@ -56,10 +71,10 @@ const Hero = () => {
           </div>
 
           {/* social */}
-          <div className="mt-5 flex items-center gap-4">
+          <div className="mt-8 flex items-center gap-4">
             <div
               className={cn(
-                "w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-gray-800 transition-all duration-300"
+                "w-10 h-10 bg-foreground/70 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-gray-800 transition-all duration-300"
               )}
             >
               <FaGithub className="text-white w-4 h-4" />
@@ -67,35 +82,39 @@ const Hero = () => {
 
             <div
               className={cn(
-                "w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-600 transition-all duration-300"
+                "w-10 h-10 bg-foreground/70 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-600 transition-all duration-300"
               )}
             >
               <a href="https://www.linkedin.com/notifications/?filter=all">
                 <FaLinkedin className="text-white w-4 h-4" />
               </a>
             </div>
-            <div
-              className={cn(
-                "w-10 h-10 bg-primary/20 rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-green-200 transition-all duration-300"
-              )}
-            >
-              <BiEnvelope className="text-white w-4 h-4" />
-            </div>
           </div>
         </div>
 
         {/* profile  */}
         <div className="order-2 lg:order-2 flex justify-center lg:justify-end">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[28rem] lg:h-[28rem]">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[25rem] lg:h-[25rem]">
             {/* background circle */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/0 blur-2xl -z-10" />
-            <div className="relative w-full h-full rounded-full overflow-hidden ring-8 ring-background shadow-xl p-6 sm:p-8 lg:p-10">
+            <div
+              className={cn(
+                "absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/0 blur-2xl -z-10"
+              )}
+            />
+            <div
+              className={cn(
+                "relative w-full h-full rounded-full overflow-hidden ring-8 ring-background shadow-xl bg-background"
+              )}
+            >
               <Image
                 src="/images/avatar2.png"
                 alt="profile"
                 fill
                 priority
-                className="object-contain"
+                className={cn(
+                  "object-cover object-[20%_12%] scale-[0.88] md:scale-[0.90] lg:scale-[0.92] translate-y-0.5"
+                )}
+                sizes="(min-width: 1024px) 28rem, 20rem"
               />
             </div>
           </div>
@@ -106,41 +125,6 @@ const Hero = () => {
         <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
         <MdOutlineKeyboardDoubleArrowDown className="h-5 w-5 text-primary" />
       </div>
-
-      {/* <div className="relative z-10 flex flex-col items-center">
-        <Image
-          src="/images/avatar3.png"
-          alt="profile"
-          width={200}
-          height={200}
-          className="rounded-full border-8 border-[#0c0c48aa]"
-          data-aos="fade-up"
-        />
-        <h2
-          data-aos="fade-up"
-          data-aos-delay="400"
-          className="mt-5 text-sm px-2 text-center sm:text-2xl text-foreground font-bold flex items-center"
-        >
-          Hi, I&apos;m Congying - A Passionate
-          <span className="text-primary font-bold">
-            <Typewriter
-              options={{
-                strings: [
-                  "Web Developer.",
-                  "MERN Stack Developer.",
-                  "Frontend Developer.",
-                  "Backend Developer.",
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 75,
-                deleteSpeed: 50,
-                wrapperClassName: "pl-2",
-              }}
-            />
-          </span>
-        </h2>
-      </div> */}
     </section>
   );
 };

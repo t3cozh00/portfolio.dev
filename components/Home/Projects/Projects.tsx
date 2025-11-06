@@ -78,7 +78,7 @@ const Projects = () => {
                   >
                     {" "}
                     <LuExternalLink size={16} />
-                    <p>Live Demo</p>
+                    <p>View Details</p>
                   </a>
                 </div>
               </div>
