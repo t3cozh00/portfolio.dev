@@ -22,7 +22,9 @@ const Footer = () => {
                 return (
                   <Link
                     key={link.id}
-                    href={link.href}
+                    href={
+                      link.href.startsWith("#") ? `/${link.href}` : link.href
+                    }
                     className={cn(
                       "text-base text-foreground/80 hover:text-primary transition-colors duration-300"
                     )}

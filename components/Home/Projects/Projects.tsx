@@ -3,6 +3,7 @@ import { LuExternalLink } from "react-icons/lu";
 import Image from "next/image";
 import { projectList } from "@/constant/constant";
 import { cn } from "@/components/lib/utils";
+import Link from "next/link";
 
 const Projects = () => {
   return (
@@ -20,17 +21,22 @@ const Projects = () => {
           Here are some of my recent projects. Each one is built with care and
           attention to detail.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid  md:grid-cols-1 lg:grid-cols-2 gap-6">
           {projectList.map((project) => (
             <div
               key={project.id}
               className={cn(
-                "bg-card border border-border rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                "relative bg-card border border-border rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               )}
             >
+              <Link
+                href={`/projects/${project.slug}`}
+                className="absolute inset-0 z-10"
+                aria-label={`Open ${project.title} details`}
+              />
               <div className="h-48 overflow-hidden">
                 <Image
-                  src={project.image}
+                  src={project.cover || "/default-project-cover.jpg"}
                   alt={project.title}
                   width={400}
                   height={300}
@@ -43,23 +49,26 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {project.description}
+                  {project.overview}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
+                  {project.techStack.map((tech) => (
                     <span
-                      key={tag}
+                      key={tech}
                       className={cn(
                         "inline-block bg-gray-100 text-gray-500 text-xs font-medium mr-2 px-2 py-1 rounded-full"
                       )}
                     >
-                      {tag}
+                      {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-3">
                   <a
-                    href={project.githubUrl}
+                    href={
+                      project.links?.find((link) => link.label === "GitHub")
+                        ?.url
+                    }
                     target="_blank"
                     className={cn(
                       "flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
@@ -67,19 +76,24 @@ const Projects = () => {
                   >
                     {" "}
                     <FaGithub size={16} />
-                    <p>Code</p>
+                    <span>Code</span>
                   </a>
                   <a
-                    href={project.demoUrl}
+                    href={
+                      project.links?.find((link) => link.label === "Demo")?.url
+                    }
                     target="_blank"
                     className={cn(
                       "flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
                     )}
+                  ></a>{" "}
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
                   >
-                    {" "}
                     <LuExternalLink size={16} />
                     <p>View Details</p>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

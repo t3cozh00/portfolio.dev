@@ -44,46 +44,133 @@ export const NavLinks = [
   },
 ];
 
-export const projectList = [
+// ---- Project types (EN only) ----
+
+export type LinkItem = { label: string; url: string };
+
+export type ProjectItem = {
+  id: number;
+  slug: string; // used to build /projects/[slug]
+  title: string;
+  cover?: string; // top hero/cover image
+  overview: string; // Overview section
+  features: string[]; // Main Features section
+  techStack: string[]; // Tech Stack badges
+  improvements: string[]; // Challenges & Solutions section
+  role: string[]; // My Role section
+  links?: LinkItem[]; // Optional external links (GitHub, Demo...)
+};
+
+export const projectList: ProjectItem[] = [
   {
     id: 1,
+    slug: "finance-dashboard",
     title: "Finance Dashboard UI",
-    description:
-      "An interactive weather dashboard that displays current and forecasted weather data using external APIs.",
-    image: "/images/p1.jpg",
-    tags: ["JavaScript  ", "CSS", "APIs"],
-    demoUrl: "#",
-    githubUrl: "https://github.com",
+    cover: "/images/p1.jpg",
+    overview:
+      "An interactive dashboard for tracking financial metrics and trends with clean visuals and responsive design.",
+    features: [
+      "Overview, trends, and drill-down charts",
+      "Data filters and date-range controls",
+      "Export snapshots",
+    ],
+    techStack: ["TypeScript", "React", "Charting Library", "Vite"],
+    improvements: [
+      "Improved performance with data windowing and memoized selectors.",
+      "Enhanced user experience with better error handling and loading states.",
+    ],
+    role: [
+      "Built chart components and responsive layout",
+      "Defined data interfaces and state management",
+    ],
+    links: [{ label: "GitHub Repo", url: "https://github.com" }],
   },
   {
     id: 2,
-    title: "E-commerce Website",
-    description:
-      "An interactive weather dashboard that displays current and forecasted weather data using external APIs.",
-    image: "/images/p2.jpg",
-    tags: ["React", "Node.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    slug: "movieverse",
+    title: "MovieVerse Web App",
+    cover: "/images/p2.jpg",
+    overview:
+      "A full-stack web app for discovering and organizing movies. Users can search titles, open rich detail pages, read/write community reviews, and save favorites to a personal watchlist.",
+    features: [
+      "Keyword search with debounce and sortable results (popularity, rating, release date)",
+      "Rich detail pages: poster, synopsis, genres, runtime, cast, and related titles",
+      "Reviews & ratings with full CRUD and optimistic UI (rollback on failure)",
+      "Per-user favorites and watchlist (server-side storage with instant client updates)",
+      "Authentication with JWT and protected routes, including token refresh",
+      "Responsive UI with light/dark themes and accessible color contrast",
+    ],
+    techStack: [
+      "React",
+      "Node.js",
+      "REST API",
+      "PostgreSQL",
+      "Supabase",
+      "Azure",
+      "GitHub Actions (CI/CD)",
+    ],
+    improvements: [
+      "Optimized database queries and added indexes to improve search performance by 40%.",
+      "Implemented token refresh to reduce user logouts by 25%.",
+      "Enhanced accessibility to achieve WCAG AA compliance.",
+    ],
+    role: [
+      "Designed the REST API and Supabase schema (tables, indexes, row-level security)",
+      "Built core React views (Search, Detail, Reviews, Watchlist) and route guards",
+      "Implemented authentication (signup/login, token refresh, logout) and frontend hooks",
+      "Set up Azure hosting and CI/CD with GitHub Actions",
+      "Performance and UX polish: image placeholders, pagination/windowing, accessibility, empty/error states",
+      "Wrote developer docs: env samples, runbooks, and contribution guidelines",
+    ],
+    links: [
+      { label: "GitHub Repo", url: "https://github.com/t3cozh00/MovieVerse" },
+    ],
   },
   {
     id: 3,
+    slug: "personal-portfolio",
     title: "Personal Portfolio",
-    description:
+    cover: "/images/p3.jpg",
+    overview:
       "An interactive weather dashboard that displays current and forecasted weather data using external APIs.",
-    image: "/images/p3.jpg",
-    tags: ["Next.js", "TailwindCSS", "React"],
-    demoUrl: "#",
-    githubUrl: "#",
+    features: [
+      "Responsive design with modern UI components",
+      "Dynamic content loading with Next.js",
+      "Integration with external APIs for real-time data",
+    ],
+    techStack: ["TypeScript", "React", "Charting Library", "Vite"],
+    improvements: [
+      "Improved performance with data windowing and memoized selectors.",
+      "Enhanced user experience with better error handling and loading states.",
+    ],
+    role: [
+      "Built chart components and responsive layout",
+      "Defined data interfaces and state management",
+    ],
+    links: [{ label: "GitHub Repo", url: "https://github.com" }],
   },
   {
     id: 4,
-    title: "Fitness Tracker",
-    description:
-      "An interactive weather dashboard that displays current and forecasted weather data using external APIs.",
-    image: "/images/p4.jpg",
-    tags: ["React Native", "Expo", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    slug: "chat-application",
+    title: "Chat Application",
+    cover: "/images/p5.avif",
+    overview:
+      "A chat application built with React Native and Expo, featuring real-time messaging, group chats and user authentication.",
+    features: [
+      "Real-time messaging with WebSocket",
+      "Group chats and direct messaging",
+      "User authentication and profile management",
+    ],
+    techStack: ["React Native", "Expo", "Firebase", "C#", "websockets"],
+    improvements: [
+      "Improved performance with data windowing and memoized selectors.",
+      "Enhanced user experience with better error handling and loading states.",
+    ],
+    role: [
+      "Built chart components and responsive layout",
+      "Defined data interfaces and state management",
+    ],
+    links: [{ label: "GitHub Repo", url: "https://github.com" }],
   },
 ];
 

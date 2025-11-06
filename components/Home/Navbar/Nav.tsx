@@ -5,6 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HiBars3BottomRight } from "react-icons/hi2";
+import { MdLanguage } from "react-icons/md";
 import Image from "next/image";
 
 type Props = {
@@ -15,13 +16,9 @@ const Nav = ({ openNav }: Props) => {
   const [navBg, setNavBg] = useState(false);
 
   useEffect(() => {
-    const handler = () => {
-      if (window.scrollY >= 90) setNavBg(true);
-      if (window.scrollY < 90) setNavBg(false);
-    };
-
-    window.addEventListener("scroll", handler);
-
+    const handler = () => setNavBg(window.scrollY >= 1);
+    handler();
+    window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
@@ -35,7 +32,7 @@ const Nav = ({ openNav }: Props) => {
     >
       <div className="flex items-center h-full justify-between w-[90%] mx-auto">
         {/* LOGO */}
-        <Link href="#hero" className="flex items-center space-x-2">
+        <Link href="/#hero" className="flex items-center space-x-2">
           <div className="relative w-15 h-15">
             <Image
               src="/images/logo-z3.png"
@@ -54,7 +51,7 @@ const Nav = ({ openNav }: Props) => {
               return (
                 <Link
                   key={link.id}
-                  href={link.href}
+                  href={link.href.startsWith("#") ? `/${link.href}` : link.href}
                   className={cn(
                     "text-base text-foreground/80 hover:text-primary font-medium transition-colors duration-300"
                   )}
@@ -69,6 +66,8 @@ const Nav = ({ openNav }: Props) => {
         <div className="flex items-center space-x-4">
           {/* Theme toggle */}
           <ThemeToggle />
+
+          <MdLanguage className="w-4.5 h-4.5 text-foreground/80 items-center justify-center text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50" />
 
           {/* burger menu */}
           <HiBars3BottomRight
