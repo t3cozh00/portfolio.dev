@@ -2,17 +2,16 @@
 import Link from "next/link";
 import type { ProjectItem } from "@/constant/constant";
 import Image from "next/image";
+import { RiArrowLeftDoubleFill } from "react-icons/ri";
 
 export default function ProjectDetail({ project }: { project: ProjectItem }) {
   return (
     <main className="container mx-auto px-4 md:px-6 lg:px-8 pt-28 pb-16">
       <div className="max-w-3xl mx-auto">
         <div className="pt-12 pb-8">
-          <Link
-            href="/#projects"
-            className="underline underline-offset-4 hover:text-primary"
-          >
-            ← Back to Projects
+          <Link href="/#projects" className="hover:text-primary">
+            <RiArrowLeftDoubleFill className="inline-block mr-1" />
+            Back to Projects
           </Link>
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold">{project.title}</h1>
@@ -50,25 +49,12 @@ export default function ProjectDetail({ project }: { project: ProjectItem }) {
             {project.techStack.map((t) => (
               <span
                 key={t}
-                className="inline-block bg-gray-100 text-gray-500 text-xs font-medium px-2 py-1 rounded-full"
+                className=" text-gray-500 text-sm font-medium px-2 py-1 rounded-full"
               >
                 {t}
               </span>
             ))}
           </div>
-        </section>
-
-        {/* Improvements */}
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">Improvements</h2>
-          <ul className="mt-3 list-disc pl-6 space-y-2">
-            {project.improvements.map((imp, i) => (
-              <li key={i}>
-                <span className="font-medium">Improvements</span>
-                {imp}
-              </li>
-            ))}
-          </ul>
         </section>
 
         {/* My Role */}
@@ -77,6 +63,16 @@ export default function ProjectDetail({ project }: { project: ProjectItem }) {
           <ul className="mt-3 list-disc pl-6 space-y-2">
             {project.role.map((r) => (
               <li key={r}>{r}</li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Enhancements */}
+        <section className="mt-10">
+          <h2 className="text-2xl font-bold">Enhancements</h2>
+          <ul className="mt-3 list-disc pl-6 space-y-2">
+            {project.enhancements.map((enh, i) => (
+              <li key={i}>{enh}</li>
             ))}
           </ul>
         </section>

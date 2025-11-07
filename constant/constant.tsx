@@ -44,21 +44,21 @@ export const NavLinks = [
   },
 ];
 
-// ---- Project types (EN only) ----
+// ---- Project types ----
 
 export type LinkItem = { label: string; url: string };
 
 export type ProjectItem = {
   id: number;
-  slug: string; // used to build /projects/[slug]
+  slug: string; // for URL path
   title: string;
-  cover?: string; // top hero/cover image
-  overview: string; // Overview section
-  features: string[]; // Main Features section
-  techStack: string[]; // Tech Stack badges
-  improvements: string[]; // Challenges & Solutions section
-  role: string[]; // My Role section
-  links?: LinkItem[]; // Optional external links (GitHub, Demo...)
+  cover?: string;
+  overview: string;
+  features: string[];
+  techStack: string[];
+  enhancements: string[];
+  role: string[];
+  links?: LinkItem[];
 };
 
 export const projectList: ProjectItem[] = [
@@ -75,7 +75,7 @@ export const projectList: ProjectItem[] = [
       "Export snapshots",
     ],
     techStack: ["TypeScript", "React", "Charting Library", "Vite"],
-    improvements: [
+    enhancements: [
       "Improved performance with data windowing and memoized selectors.",
       "Enhanced user experience with better error handling and loading states.",
     ],
@@ -91,36 +91,35 @@ export const projectList: ProjectItem[] = [
     title: "MovieVerse Web App",
     cover: "/images/p2.jpg",
     overview:
-      "A full-stack web app for discovering and organizing movies. Users can search titles, open rich detail pages, read/write community reviews, and save favorites to a personal watchlist.",
+      "A full-stack movie platform for discovering, reviewing, and organizing films. It offers a large catalog with trailers, cast and user reviews, search with filters, Finnish cinema showtimes, personal profiles and favorites, plus community groups.",
     features: [
-      "Keyword search with debounce and sortable results (popularity, rating, release date)",
-      "Rich detail pages: poster, synopsis, genres, runtime, cast, and related titles",
-      "Reviews & ratings with full CRUD and optimistic UI (rollback on failure)",
+      "Browse a wide catalog with description, rating, trailer, cast, and user reviews",
+      "Check cinema showtimes in Finland",
+      "Implement notifications for group join requests and admin responses",
       "Per-user favorites and watchlist (server-side storage with instant client updates)",
-      "Authentication with JWT and protected routes, including token refresh",
-      "Responsive UI with light/dark themes and accessible color contrast",
+      "Create and manage interest-based groups; request to join groups",
+      "Account management: sign up/in and delete account",
     ],
     techStack: [
       "React",
       "Node.js",
-      "REST API",
+      "Express",
       "PostgreSQL",
       "Supabase",
       "Azure",
-      "GitHub Actions (CI/CD)",
+      "Render",
     ],
-    improvements: [
-      "Optimized database queries and added indexes to improve search performance by 40%.",
-      "Implemented token refresh to reduce user logouts by 25%.",
-      "Enhanced accessibility to achieve WCAG AA compliance.",
+    enhancements: [
+      "Refine the UI/UX to make pages more intuitive and user-friendly",
+      "Add movie recommendations based on the user's favorites list",
+      "Enhance reviews & engagement: support likes/pins on reviews, sort by popularity or time, @-mentions with notifications",
+      "Improve performance & loading: server-side pagination and caching and virtualize long lists.",
     ],
     role: [
-      "Designed the REST API and Supabase schema (tables, indexes, row-level security)",
       "Built core React views (Search, Detail, Reviews, Watchlist) and route guards",
-      "Implemented authentication (signup/login, token refresh, logout) and frontend hooks",
-      "Set up Azure hosting and CI/CD with GitHub Actions",
-      "Performance and UX polish: image placeholders, pagination/windowing, accessibility, empty/error states",
-      "Wrote developer docs: env samples, runbooks, and contribution guidelines",
+      "Implemented homepage, group management, user profile, and notifications full-stack features",
+      "Designed the REST API and Supabase schema (tables, indexes, row-level security)",
+      "Application deployment & environment setup (frontend/backend)",
     ],
     links: [
       { label: "GitHub Repo", url: "https://github.com/t3cozh00/MovieVerse" },
@@ -139,9 +138,11 @@ export const projectList: ProjectItem[] = [
       "Integration with external APIs for real-time data",
     ],
     techStack: ["TypeScript", "React", "Charting Library", "Vite"],
-    improvements: [
-      "Improved performance with data windowing and memoized selectors.",
-      "Enhanced user experience with better error handling and loading states.",
+    enhancements: [
+      "Refine the UI/UX to make pages more intuitive and user-friendly",
+      "Add movie recommendations based on the user's favorites list",
+      "Enhance reviews & engagement: support likes/pins on reviews, sort by popularity or time, @-mentions with notifications",
+      "Improve performance & loading: server-side pagination and caching and virtualize long lists.",
     ],
     role: [
       "Built chart components and responsive layout",
@@ -162,7 +163,7 @@ export const projectList: ProjectItem[] = [
       "User authentication and profile management",
     ],
     techStack: ["React Native", "Expo", "Firebase", "C#", "websockets"],
-    improvements: [
+    enhancements: [
       "Improved performance with data windowing and memoized selectors.",
       "Enhanced user experience with better error handling and loading states.",
     ],

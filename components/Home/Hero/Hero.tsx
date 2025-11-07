@@ -74,7 +74,7 @@ const Hero = () => {
           <div className="mt-8 flex items-center gap-4">
             <div
               className={cn(
-                "w-10 h-10 bg-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-gray-800 transition-all duration-300"
+                "w-10 h-10 bg-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-gray-500 transition-all duration-300"
               )}
             >
               <FaGithub className="text-white w-4 h-4" />

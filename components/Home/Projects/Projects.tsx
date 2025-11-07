@@ -29,18 +29,13 @@ const Projects = () => {
                 "relative bg-card border border-border rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               )}
             >
-              <Link
-                href={`/projects/${project.slug}`}
-                className="absolute inset-0 z-10"
-                aria-label={`Open ${project.title} details`}
-              />
-              <div className="h-48 overflow-hidden">
+              <div className="relative aspect-[16/9] overflow-hidden">
                 <Image
                   src={project.cover || "/default-project-cover.jpg"}
                   alt={project.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                  fill
+                  sizes="(min-width:1024px) 560px, 100vw"
+                  className="object-cover transition-transform"
                 />
               </div>
 
@@ -52,33 +47,44 @@ const Projects = () => {
                   {project.overview}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((tech) => (
+                  {project.techStack.slice(0, 4).map((tech) => (
                     <span
                       key={tech}
                       className={cn(
-                        "inline-block bg-gray-100 text-gray-500 text-xs font-medium mr-2 px-2 py-1 rounded-full"
+                        "inline-block bg-gray-100 text-gray-500 text-xs font-medium mr-2 px-2 py-1 rounded-lg"
                       )}
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.techStack.length > 4 && (
+                    <span
+                      key="more-tech"
+                      className={cn(
+                        "inline-block bg-white border border-border text-gray-500 text-xs font-medium mr-2 px-2 py-1 rounded-lg"
+                      )}
+                    >
+                      +{project.techStack.length - 4}
+                    </span>
+                  )}
                 </div>
                 <div className="flex gap-3">
                   <a
                     href={
-                      project.links?.find((link) => link.label === "GitHub")
-                        ?.url
+                      project.links?.find(
+                        (link) => link.label === "GitHub Repo"
+                      )?.url
                     }
                     target="_blank"
                     className={cn(
-                      "flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                      "flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors hover:text-primary"
                     )}
                   >
                     {" "}
                     <FaGithub size={16} />
                     <span>Code</span>
                   </a>
-                  <a
+                  {/* <a
                     href={
                       project.links?.find((link) => link.label === "Demo")?.url
                     }
@@ -86,10 +92,10 @@ const Projects = () => {
                     className={cn(
                       "flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
                     )}
-                  ></a>{" "}
+                  ></a> */}
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="flex items-center gap-1 text-sm hover:text-indigo-600 transition-colors"
+                    className="flex items-center gap-1 text-sm underline underline-offset-4 hover:text-primary"
                   >
                     <LuExternalLink size={16} />
                     <p>View Details</p>
