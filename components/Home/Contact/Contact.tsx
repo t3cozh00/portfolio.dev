@@ -1,5 +1,7 @@
 import { cn } from "@/components/lib/utils";
-import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
+import { BiEnvelope, BiMap } from "react-icons/bi";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { LuSend } from "react-icons/lu";
 
 const Contact = () => {
@@ -112,7 +114,7 @@ const Contact = () => {
                 Contact Information
               </h3>
               <div className="space-y-8">
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full bg-primary/10">
                     <BiPhone className="w-6 h-6 text-primary" />
                   </div>
@@ -120,14 +122,18 @@ const Contact = () => {
                     <h4 className="font-bold mb-0.5">Phone</h4>
                     <p className="font-bold text-gray-500">+123456790</p>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-full bg-primary/10">
                     <BiEnvelope className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold mb-0.5">Email</h4>
-                    <p className="font-bold text-gray-500">email@example.com</p>
+                    <a href="mailto:kaarekura@gmail.com">
+                      <p className="font-bold text-gray-500">
+                        kaarekura@gmail.com
+                      </p>
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -136,17 +142,34 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold mb-0.5">Location</h4>
-                    <p className="font-bold text-gray-500">Helsinki, Finland</p>
+                    <p className="font-bold text-gray-500">Oulu, Finland</p>
+                  </div>
+                </div>
+                <div className="mt-12 flex space-x-8">
+                  <div
+                    className={cn(
+                      "p-3 rounded-full bg-primary/10 flex justify-center items-center cursor-pointer flex-col hover:bg-sky-400 transition-all duration-300"
+                    )}
+                  >
+                    <FaXTwitter className="w-6 h-6 text-primary" />
+                  </div>
+
+                  <div
+                    className={cn(
+                      "p-3 rounded-full bg-primary/10 flex justify-center items-center cursor-pointer flex-col hover:bg-pink-400 transition-all duration-300"
+                    )}
+                  >
+                    <FaInstagram className="w-6 h-6 text-primary" />
                   </div>
                 </div>
               </div>
-              <div className="mt-12">
+              {/* <div className="mt-12">
                 <h4 className="text-xl font-bold mb-6">Working Hours</h4>
                 <div className="text-foreground/80 space-y-2">
                   <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
                   <p>Weekend: Available for urgent matters</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

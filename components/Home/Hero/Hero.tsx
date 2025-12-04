@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import ParticlesHero from "./ParticleBackground";
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { BiDownload, BiEnvelope } from "react-icons/bi";
+import { BiDownload } from "react-icons/bi";
 
 const Hero = () => {
   return (
@@ -85,7 +85,7 @@ const Hero = () => {
                 "w-10 h-10 bg-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-600 transition-all duration-300"
               )}
             >
-              <a href="https://www.linkedin.com/notifications/?filter=all">
+              <a href="https://www.linkedin.com/in/congying-zhao-36a29629a/">
                 <FaLinkedin className="text-white w-4 h-4" />
               </a>
             </div>

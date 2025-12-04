@@ -64,17 +64,17 @@ export type ProjectItem = {
 export const projectList: ProjectItem[] = [
   {
     id: 1,
-    slug: "finance-dashboard",
-    title: "Finance Dashboard UI",
+    slug: "petlove",
+    title: "PetLove - Pet Adoption Platform",
     cover: "/images/p1.jpg",
     overview:
-      "An interactive dashboard for tracking financial metrics and trends with clean visuals and responsive design.",
+      "A platform for adopting pets with a user-friendly interface and robust backend.",
     features: [
-      "Overview, trends, and drill-down charts",
-      "Data filters and date-range controls",
-      "Export snapshots",
+      "User authentication and profiles",
+      "Pet listings with filters",
+      "Adoption application process",
     ],
-    techStack: ["TypeScript", "React", "Charting Library", "Vite"],
+    techStack: ["JavaScript", "Node.js", "MongoDB"],
     enhancements: [
       "Improved performance with data windowing and memoized selectors.",
       "Enhanced user experience with better error handling and loading states.",
@@ -88,7 +88,7 @@ export const projectList: ProjectItem[] = [
   {
     id: 2,
     slug: "movieverse",
-    title: "MovieVerse Web App",
+    title: "MovieVerse - Full-Stack Movie Platform",
     cover: "/images/p2.jpg",
     overview:
       "A full-stack movie platform for discovering, reviewing, and organizing films. It offers a large catalog with trailers, cast and user reviews, search with filters, Finnish cinema showtimes, personal profiles and favorites, plus community groups.",
@@ -123,15 +123,68 @@ export const projectList: ProjectItem[] = [
     ],
     links: [
       { label: "GitHub Repo", url: "https://github.com/t3cozh00/MovieVerse" },
+      {
+        label: "Presentation",
+        url: "https://youtu.be/g0rp-do733Q",
+      },
+      { label: "Live Site", url: "https://movieverse-zeta.vercel.app/" },
     ],
   },
   {
     id: 3,
-    slug: "personal-portfolio",
-    title: "Personal Portfolio",
+    slug: "unichat",
+    title: "UniChat - Cross-University Chat App",
     cover: "/images/p3.jpg",
     overview:
-      "An interactive weather dashboard that displays current and forecasted weather data using external APIs.",
+      "A chat application built with React Native and Expo, featuring real-time messaging, group chats and user authentication.",
+    features: [
+      "Email/password authentication with persistent login state",
+      "User profiles with selectable avatars shown across the app",
+      "Course and project-based group chatrooms with real-time messaging",
+      "Group announcements for sharing important updates and deadlines",
+      "In-chat translation toggle (EN/FI/NL) so users can read messages in their preferred language",
+      "Student-friendly UX with clear navigation, toasts and loading indicators",
+    ],
+    techStack: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "C#",
+      "ASP.NET Core",
+      "websockets",
+      "SignalR",
+      "PostgreSQL",
+      "Docker",
+    ],
+    enhancements: [
+      "Add a richer notification system for mentions, invites and announcement highlights",
+      "Support message search, pinned messages and file/image attachments in chatrooms",
+      "Improve offline support with message caching and queued sends when the device reconnects",
+    ],
+    role: [
+      "Implemented authentication flow (login, registration, password reset) and persistent login",
+      "Built user profile and avatar selection UI, integrating with backend avatar storage",
+      "Hooked up chat views to the backend and SignalR-based real-time messaging",
+      "Designed and refined the mobile UX: navigation structure, toasts, loading states, and in-chat translation toggle",
+    ],
+    links: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/t3cozh00/unichat-frontend",
+      },
+      {
+        label: "Demo Video",
+        url: "https://youtu.be/6jH2R_F63a8",
+      },
+    ],
+  },
+  {
+    id: 4,
+    slug: "personal-portfolio",
+    title: "Personal Portfolio",
+    cover: "/images/p4.jpg",
+    overview:
+      "A personal portfolio website to showcase projects, skills, and experience, built with TypeScript and React.",
     features: [
       "Responsive design with modern UI components",
       "Dynamic content loading with Next.js",
@@ -143,29 +196,6 @@ export const projectList: ProjectItem[] = [
       "Add movie recommendations based on the user's favorites list",
       "Enhance reviews & engagement: support likes/pins on reviews, sort by popularity or time, @-mentions with notifications",
       "Improve performance & loading: server-side pagination and caching and virtualize long lists.",
-    ],
-    role: [
-      "Built chart components and responsive layout",
-      "Defined data interfaces and state management",
-    ],
-    links: [{ label: "GitHub Repo", url: "https://github.com" }],
-  },
-  {
-    id: 4,
-    slug: "chat-application",
-    title: "Chat Application",
-    cover: "/images/p5.avif",
-    overview:
-      "A chat application built with React Native and Expo, featuring real-time messaging, group chats and user authentication.",
-    features: [
-      "Real-time messaging with WebSocket",
-      "Group chats and direct messaging",
-      "User authentication and profile management",
-    ],
-    techStack: ["React Native", "Expo", "Firebase", "C#", "websockets"],
-    enhancements: [
-      "Improved performance with data windowing and memoized selectors.",
-      "Enhanced user experience with better error handling and loading states.",
     ],
     role: [
       "Built chart components and responsive layout",
