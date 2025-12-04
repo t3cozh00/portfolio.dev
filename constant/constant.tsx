@@ -181,27 +181,14 @@ export const projectList: ProjectItem[] = [
   {
     id: 4,
     slug: "personal-portfolio",
-    title: "Personal Portfolio",
-    cover: "/images/p4.jpg",
-    overview:
-      "A personal portfolio website to showcase projects, skills, and experience, built with TypeScript and React.",
-    features: [
-      "Responsive design with modern UI components",
-      "Dynamic content loading with Next.js",
-      "Integration with external APIs for real-time data",
-    ],
-    techStack: ["TypeScript", "React", "Charting Library", "Vite"],
-    enhancements: [
-      "Refine the UI/UX to make pages more intuitive and user-friendly",
-      "Add movie recommendations based on the user's favorites list",
-      "Enhance reviews & engagement: support likes/pins on reviews, sort by popularity or time, @-mentions with notifications",
-      "Improve performance & loading: server-side pagination and caching and virtualize long lists.",
-    ],
-    role: [
-      "Built chart components and responsive layout",
-      "Defined data interfaces and state management",
-    ],
-    links: [{ label: "GitHub Repo", url: "https://github.com" }],
+    title: "",
+    cover: "",
+    overview: "",
+    features: [],
+    techStack: [],
+    enhancements: [],
+    role: [],
+    links: [],
   },
 ];
 
