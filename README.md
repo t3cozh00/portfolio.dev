@@ -1,31 +1,21 @@
-Tutorial:
-https://youtu.be/_ZkpvMjX9O8?si=eZb6oWQDA8ThoKbJ
+# 🌌 Personal Developer Portfolio
 
-## Getting Started
+This is my personal developer portfolio website, built with **Next.js** (App Router), **TypeScript**, and **Tailwind CSS**. It showcases my main projects, skills, and background as an IT student and software developer.
 
-First, run the development server:
+## 🧱 Tech Stack
 
-```bash
-npm run dev
-```
+- **Framework**: Next.js (App Router, TypeScript) :contentReference[oaicite:1]{index=1}
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + custom utility classes
+- **Icons & Effects**:
+  - `react-icons` for social icons and UI icons
+  - Typewriter effect component for hero text
+- **Tooling**:
+  - ESLint
+  - PostCSS
+  - `npm` scripts for development and build
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📄 License
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for personal / educational use.
+You are welcome to browse the code and use parts of the structure as inspiration.

@@ -56,8 +56,8 @@ export type ProjectItem = {
   overview: string;
   features: string[];
   techStack: string[];
-  enhancements: string[];
-  role: string[];
+  enhancements?: string[];
+  role?: string[];
   links?: LinkItem[];
 };
 
@@ -181,14 +181,25 @@ export const projectList: ProjectItem[] = [
   {
     id: 4,
     slug: "personal-portfolio",
-    title: "",
+    title: "Personal Developer Portfolio",
     cover: "",
-    overview: "",
-    features: [],
-    techStack: [],
-    enhancements: [],
-    role: [],
-    links: [],
+    overview:
+      "A responsive personal portfolio website built with modern React and Next.js to showcase my projects, skills, and background as a software developer. It focuses on clean design, accessibility, and a student-friendly narrative.",
+    features: [
+      "Hero section with short introduction, typed headline, and social links",
+      "Projects grid powered by a central project list with detailed descriptions",
+      "Skills and tech stack section grouped by Frontend, Backend, and Tools",
+      "Timeline-style section for education and experience highlights",
+      "Dark/light theme toggle with smooth transitions",
+      "Fully responsive layout optimized for mobile, tablet, and desktop",
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    links: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/t3cozh00/portfolio.dev",
+      },
+    ],
   },
 ];
 
