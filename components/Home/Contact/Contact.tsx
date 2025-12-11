@@ -114,24 +114,15 @@ const Contact = () => {
                 Contact Information
               </h3>
               <div className="space-y-8">
-                {/* <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <BiPhone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-0.5">Phone</h4>
-                    <p className="font-bold text-gray-500">+123456790</p>
-                  </div>
-                </div> */}
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 pr-2 md:pr-4">
                   <div className="p-3 rounded-full bg-primary/10">
                     <BiEnvelope className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold mb-0.5">Email</h4>
-                    <a href="mailto:kaarekura@gmail.com">
-                      <p className="font-bold text-gray-500">
-                        kaarekura@gmail.com
+                    <a href="mailto:zoey.c.zhao@outlook.com">
+                      <p className="font-semibold text-gray-500 text-sm md:text-base break-all md:break-normal">
+                        zoey.c.zhao@outlook.com
                       </p>
                     </a>
                   </div>
