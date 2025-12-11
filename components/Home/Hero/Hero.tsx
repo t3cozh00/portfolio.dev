@@ -56,10 +56,15 @@ const Hero = () => {
           {/* button */}
           <div className="mt-5 flex gap-4">
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-              <button className="cosmic-button w-fit flex items-center mx-auto gap-2">
+              <a
+                href="../../congying_zhao_cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cosmic-button w-fit flex items-center mx-auto gap-2"
+              >
                 <BiDownload className="w-5 h-5" />
                 <span>Download CV</span>
-              </button>
+              </a>
               <a
                 href="#projects"
                 className={cn(

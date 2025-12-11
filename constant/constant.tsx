@@ -126,8 +126,7 @@ export const projectList: ProjectItem[] = [
       "Express",
       "PostgreSQL",
       "Supabase",
-      "Azure",
-      "Render",
+      "Vercel",
     ],
     enhancements: [
       "Refine the UI/UX to make pages more intuitive and user-friendly",
@@ -213,13 +212,13 @@ export const projectList: ProjectItem[] = [
       "Dark/light theme toggle with smooth transitions",
       "Fully responsive layout optimized for mobile, tablet, and desktop",
     ],
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     links: [
       {
         label: "GitHub Repo",
         url: "https://github.com/t3cozh00/portfolio.dev",
       },
-      { label: "Live Site", url: "" },
+      { label: "Live Site", url: "https://zoey-congying-zhao.vercel.app/" },
     ],
   },
 ];
