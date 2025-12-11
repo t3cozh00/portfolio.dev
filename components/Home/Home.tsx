@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Hero from "./Hero/Hero";
+import AboutMe from "./About/AboutMe";
 //import Services from "./Services/Services";
 //import Resume from "./Resume/Resume";
 import Projects from "./Projects/Projects";
@@ -28,6 +29,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden ">
       <Hero />
+
       {/* 1:06:00 */}
       {/* <Services /> */}
       {/* 1:14:00*/}
@@ -36,6 +38,7 @@ const Home = () => {
       <Skills />
       {/* <ClientReview /> */}
       {/* <Blog /> */}
+      <AboutMe />
       <Contact />
     </div>
   );

@@ -39,8 +39,8 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-6 text-center">
           <p className="text-sm text-muted-foreground">
             {" "}
-            &copy; {new Date().getFullYear()} CongyingPortfolio. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Congying&apos;s Portfolio. All
+            rights reserved.
           </p>
         </div>
       </div>

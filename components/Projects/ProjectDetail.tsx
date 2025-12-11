@@ -20,9 +20,9 @@ export default function ProjectDetail({ project }: { project: ProjectItem }) {
           <Image
             src={project.cover}
             alt={project.title}
-            width={1200}
+            width={1000}
             height={675}
-            className="mt-6 rounded-lg"
+            className="mt-6 rounded-lg border border-border"
           />
         )}
 
@@ -58,24 +58,28 @@ export default function ProjectDetail({ project }: { project: ProjectItem }) {
         </section>
 
         {/* My Role */}
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">My Role</h2>
-          <ul className="mt-3 list-disc pl-6 space-y-2">
-            {project.role.map((r) => (
-              <li key={r}>{r}</li>
-            ))}
-          </ul>
-        </section>
+        {(project.role ?? []).length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-2xl font-bold">My Role</h2>
+            <ul className="mt-3 list-disc pl-6 space-y-2">
+              {(project.role ?? []).map((r) => (
+                <li key={r}>{r}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Enhancements */}
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold">Enhancements</h2>
-          <ul className="mt-3 list-disc pl-6 space-y-2">
-            {project.enhancements.map((enh, i) => (
-              <li key={i}>{enh}</li>
-            ))}
-          </ul>
-        </section>
+        {(project.enhancements ?? []).length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-2xl font-bold">Enhancements</h2>
+            <ul className="mt-3 list-disc pl-6 space-y-2">
+              {(project.enhancements ?? []).map((enh, i) => (
+                <li key={i}>{enh}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Links */}
         {project.links && project.links.length > 0 && (

@@ -24,7 +24,7 @@ const Hero = () => {
         {/* left content */}
         <div className="order-1 lg:order-1">
           <h1 className="font-extrabold tracking-tight text-4xl sm:text-5xl xl:text-6xl text-foreground whitespace-nowrap">
-            Hello! I&apos;m Zoey
+            Hi! Here&apos;s Zoey
           </h1>
 
           <h2 className="mt-5 text-2xl sm:text-3xl font-semibold">
@@ -32,7 +32,7 @@ const Hero = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "Web Developer.",
+                    "Software Developer.",
                     "MERN Stack Developer.",
                     "Full Stack Developer.",
                   ],
@@ -47,13 +47,14 @@ const Hero = () => {
           </h2>
 
           <p className="mt-5 max-w-xl text-foreground/70 leading-relaxed">
-            A passionate developer with experience in Next.js, React, Tailwind
-            CSS, and cloud services. I love building clean, accessible web apps
-            with a focus on performance and delightful UX.
+            A third-year IT student focusing on full-stack development, with
+            experience in team-based projects and modern web technologies. I
+            enjoy turning ideas into useful digital products and keep learning
+            new tools along the way.
           </p>
 
           {/* button */}
-          <div className="mt-5 flex flex-col sm:flex-row gap-4">
+          <div className="mt-5 flex gap-4">
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
               <button className="cosmic-button w-fit flex items-center mx-auto gap-2">
                 <BiDownload className="w-5 h-5" />
@@ -62,7 +63,7 @@ const Hero = () => {
               <a
                 href="#projects"
                 className={cn(
-                  "px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                  "px-6 py-2 text-center rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
                 )}
               >
                 View projects
@@ -74,7 +75,7 @@ const Hero = () => {
           <div className="mt-8 flex items-center gap-4">
             <div
               className={cn(
-                "w-10 h-10 bg-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-gray-500 transition-all duration-300"
+                "w-10 h-10 bg-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:shadow-lg hover:-translate-y-0.5"
               )}
             >
               <FaGithub className="text-white w-4 h-4" />
@@ -82,7 +83,7 @@ const Hero = () => {
 
             <div
               className={cn(
-                "w-10 h-10 bg-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:bg-blue-600 transition-all duration-300"
+                "w-10 h-10 bg-foreground text-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:shadow-lg hover:-translate-y-0.5"
               )}
             >
               <a href="https://www.linkedin.com/in/congying-zhao-36a29629a/">
@@ -107,7 +108,7 @@ const Hero = () => {
               )}
             >
               <Image
-                src="/images/avatar2.png"
+                src="/images/328KB.jpg"
                 alt="profile"
                 fill
                 priority

@@ -6,10 +6,11 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiPostgresql,
-  SiMongodb,
   SiPython,
   SiFigma,
   SiDocker,
+  SiReactivex,
+  SiMysql,
 } from "react-icons/si";
 
 import { FaCss3Alt, FaHtml5, FaGithub } from "react-icons/fa6";
@@ -24,18 +25,18 @@ export const NavLinks = [
 
   {
     id: 2,
-    href: "#about",
-    label: "About",
-  },
-  {
-    id: 3,
     href: "#projects",
     label: "Projects",
   },
   {
-    id: 4,
+    id: 3,
     href: "#skills",
     label: "Skills",
+  },
+  {
+    id: 4,
+    href: "#about",
+    label: "About",
   },
   {
     id: 5,
@@ -66,30 +67,49 @@ export const projectList: ProjectItem[] = [
     id: 1,
     slug: "petlove",
     title: "PetLove - Pet Adoption Platform",
-    cover: "/images/p1.jpg",
+    cover: "/images/petlove.png",
     overview:
-      "A platform for adopting pets with a user-friendly interface and robust backend.",
+      "Web-based pet adoption platform where users can register, browse pets, post pets for adoption, and submit adoption applications.",
     features: [
-      "User authentication and profiles",
-      "Pet listings with filters",
-      "Adoption application process",
+      "User registration, login",
+      "Browse pets with basic filters such as type, age, and location",
+      "Register pets for adoption with detailed descriptions and photos",
+      "Submit adoption applications and view application history",
+      "Email notifications for important actions (e.g. password reset, account activation, adoption request)",
     ],
-    techStack: ["JavaScript", "Node.js", "MongoDB"],
+    techStack: [
+      "JavaScript",
+      "HTML/CSS",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "JWT auth",
+      "Nodemailer",
+    ],
     enhancements: [
-      "Improved performance with data windowing and memoized selectors.",
-      "Enhanced user experience with better error handling and loading states.",
+      "Applied a clear Model-Route-Controller structure on the backend for maintainable code.",
+      "Implemented JWT-based authentication to protect user data and restrict access to certain actions.",
+      "Improved user experience around forms with on-screen notifications and error messages.",
     ],
     role: [
-      "Built chart components and responsive layout",
-      "Defined data interfaces and state management",
+      "Responsible for the pet registration module (frontend form + backend API).",
+      "Built the pet registration form UI, including fields such as pet name, type, age, description, and location.",
+      "Integrated the pet registration flow with JWT-based authentication so only logged-in users can register pets.",
+      "Collaborated with teammates to test the end-to-end flow from pet registration to adoption requests.",
     ],
-    links: [{ label: "GitHub Repo", url: "https://github.com" }],
+    links: [
+      { label: "GitHub Repo", url: "https://github.com/t3cozh00/petlove" },
+      {
+        label: "Live Demo",
+        url: "https://youtu.be/gHHSJeUEY40",
+      },
+    ],
   },
   {
     id: 2,
     slug: "movieverse",
     title: "MovieVerse - Full-Stack Movie Platform",
-    cover: "/images/p2.jpg",
+    cover: "/images/movieverse.jpg",
     overview:
       "A full-stack movie platform for discovering, reviewing, and organizing films. It offers a large catalog with trailers, cast and user reviews, search with filters, Finnish cinema showtimes, personal profiles and favorites, plus community groups.",
     features: [
@@ -134,7 +154,7 @@ export const projectList: ProjectItem[] = [
     id: 3,
     slug: "unichat",
     title: "UniChat - Cross-University Chat App",
-    cover: "/images/p3.jpg",
+    cover: "/images/unichat.jpg",
     overview:
       "A chat application built with React Native and Expo, featuring real-time messaging, group chats and user authentication.",
     features: [
@@ -182,7 +202,7 @@ export const projectList: ProjectItem[] = [
     id: 4,
     slug: "personal-portfolio",
     title: "Personal Developer Portfolio",
-    cover: "",
+    cover: "/images/logo-z3.png",
     overview:
       "A responsive personal portfolio website built with modern React and Next.js to showcase my projects, skills, and background as a software developer. It focuses on clean design, accessibility, and a student-friendly narrative.",
     features: [
@@ -199,103 +219,184 @@ export const projectList: ProjectItem[] = [
         label: "GitHub Repo",
         url: "https://github.com/t3cozh00/portfolio.dev",
       },
+      { label: "Live Site", url: "" },
     ],
   },
 ];
 
 export const skillList = [
-  // Frontend
+  // Languages & Frameworks
+
+  {
+    name: "JavaScript",
+    icon: <SiJavascript />,
+    percentage: 87,
+    category: "languagesFrameworks",
+  },
+  {
+    name: "React",
+    icon: <SiReact />,
+    percentage: 85,
+    category: "languagesFrameworks",
+  },
+  {
+    name: "React Native",
+    icon: <SiReactivex />,
+    percentage: 80,
+    category: "languagesFrameworks",
+  },
+  {
+    name: "Expo",
+    percentage: 75,
+    category: "languagesFrameworks",
+  },
+
+  { name: "SQL", percentage: 70, category: "languagesFrameworks" },
+
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss />,
+    percentage: 85,
+    category: "languagesFrameworks",
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript />,
+    percentage: 85,
+    category: "languagesFrameworks",
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs />,
+    percentage: 85,
+    category: "languagesFrameworks",
+  },
+  {
+    name: "Node.js",
+    icon: <SiNodedotjs />,
+    percentage: 85,
+    category: "languagesFrameworks",
+  },
+  { name: "Express.js", percentage: 80, category: "languagesFrameworks" },
   {
     name: "HTML5",
     icon: <FaHtml5 />,
-    percentage: 89,
-    category: "frontend",
+    percentage: 80,
+    category: "languagesFrameworks",
   },
 
   {
     name: "CSS3",
     icon: <FaCss3Alt />,
-    percentage: 89,
-    category: "frontend",
-  },
-  {
-    name: "JavaScript",
-    icon: <SiJavascript />,
-    percentage: 89,
-    category: "frontend",
-  },
-  {
-    name: "React",
-    icon: <SiReact />,
-    percentage: 92,
-    category: "frontend",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: <SiTailwindcss />,
-    percentage: 94,
-    category: "frontend",
-  },
-  {
-    name: "TypeScript",
-    icon: <SiTypescript />,
-    percentage: 95,
-    category: "frontend",
-  },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs />,
-    percentage: 90,
-    category: "frontend",
-  },
-  // Backend
-  {
-    name: "Node.js",
-    icon: <SiNodedotjs />,
-    percentage: 88,
-    category: "backend",
-  },
-  {
-    name: "PostgreSQL",
-    percentage: 85,
-    icon: <SiPostgresql />,
-    category: "backend",
-  },
-  {
-    name: "MongoDB",
-    icon: <SiMongodb />,
     percentage: 80,
-    category: "backend",
+    category: "languagesFrameworks",
+  },
+  {
+    name: "Kotlin",
+    percentage: 50,
+    category: "languagesFrameworks",
+  },
+  {
+    name: "Java",
+    percentage: 50,
+    category: "languagesFrameworks",
   },
   {
     name: "Python",
     icon: <SiPython />,
     percentage: 80,
-    category: "backend",
+    category: "languagesFrameworks",
   },
-  // Tools
+  { name: "C#", percentage: 40, category: "languagesFrameworks" },
+
+  // Tools & Platforms
+  {
+    name: "PostgreSQL",
+    percentage: 85,
+    icon: <SiPostgresql />,
+    category: "toolsPlatforms",
+  },
+  {
+    name: "MySQL",
+    percentage: 85,
+    icon: <SiMysql />,
+    category: "toolsPlatforms",
+  },
+  {
+    name: "Vercel",
+    percentage: 60,
+    category: "toolsPlatforms",
+  },
+  {
+    name: "Render",
+    percentage: 60,
+    category: "toolsPlatforms",
+  },
+  {
+    name: "Firebase",
+    percentage: 60,
+    category: "toolsPlatforms",
+  },
+  {
+    name: "Supabase",
+    percentage: 60,
+    category: "toolsPlatforms",
+  },
+  {
+    name: "Microsoft Azure",
+    percentage: 60,
+    category: "toolsPlatforms",
+  },
+  {
+    name: "Postman",
+    percentage: 60,
+    category: "toolsPlatforms",
+  },
+
   {
     name: "Git/GitHub",
     icon: <FaGithub />,
     percentage: 90,
-    category: "tools",
+    category: "toolsPlatforms",
   },
   {
     name: "Figma",
     icon: <SiFigma />,
-    percentage: 85,
-    category: "tools",
+    percentage: 80,
+    category: "toolsPlatforms",
   },
   {
     name: "VS Code",
     icon: <VscVscode />,
     percentage: 95,
-    category: "tools",
+    category: "toolsPlatforms",
   },
   {
     name: "Docker",
     icon: <SiDocker />,
     percentage: 70,
-    category: "tools",
+    category: "toolsPlatforms",
+  },
+
+  // Others
+  {
+    name: "REST API",
+    category: "others",
+  },
+  {
+    name: "JWT Auth",
+    category: "others",
+  },
+  {
+    name: "Responsiveness",
+    category: "others",
+  },
+  {
+    name: "Scrum",
+    category: "others",
+  },
+  {
+    name: "API & DB Design",
+    category: "others",
   },
 ];

@@ -12,7 +12,7 @@ const Projects = () => {
       className="container mx-auto px-4 md:px-6 lg:px-8 pt-15 relative"
     >
       <div className="pt-16 pb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+        <h2 className="text-2xl md:text-4xl xl:text-5xl font-bold mb-4 text-center">
           {" "}
           Featured <span className="text-primary"> Projects </span>
         </h2>
@@ -29,13 +29,13 @@ const Projects = () => {
                 "relative bg-card border border-border rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               )}
             >
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative aspect-[16/9] rounded-xl bg-muted">
                 <Image
                   src={project.cover || "/default-project-cover.jpg"}
                   alt={project.title}
                   fill
                   sizes="(min-width:1024px) 560px, 100vw"
-                  className="object-cover transition-transform"
+                  className="object-contain p-4"
                 />
               </div>
 

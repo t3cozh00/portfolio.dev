@@ -3,9 +3,9 @@ import { cn } from "@/components/lib/utils";
 import { skillList } from "@/constant/constant";
 
 const categories = [
-  { title: "Frontend", key: "frontend" },
-  { title: "Backend", key: "backend" },
-  { title: "Tools & Others", key: "tools" },
+  { title: "Languages & Frameworks", key: "languagesFrameworks" },
+  { title: "Tools & Platforms", key: "toolsPlatforms" },
+  { title: "Others", key: "others" },
 ];
 
 function Progress({ value }: { value: number }) {
@@ -36,6 +36,7 @@ const Skills = () => {
         <div className="space-y-12 mt-10">
           {categories.map(({ title, key }) => {
             const items = skillList.filter((s) => s.category === key);
+            const showProgress = key === "languagesFrameworks";
             return (
               <div key={key}>
                 <h3 className="text-2xl font-bold mb-8">{title}</h3>
@@ -47,13 +48,15 @@ const Skills = () => {
                         "bg-card border border-border rounded-lg p-4 shadow-xs dark:shadow-[0_1px_0_rgba(255,255,255,0.04)] card-hover flex flex-col items-center text-center"
                       )}
                     >
-                      <div className="text-5xl text-foreground" aria-hidden>
+                      {/* <div className="text-5xl text-foreground" aria-hidden>
                         {skil.icon}
-                      </div>
+                      </div> */}
                       <h4 className="font-bold tracking-tight text-foreground whitespace-nowrap m-3">
                         {skil.name}
                       </h4>
-                      <Progress value={skil.percentage} />
+                      {showProgress && typeof skil.percentage === "number" && (
+                        <Progress value={skil.percentage} />
+                      )}
                     </div>
                   ))}
                 </div>
