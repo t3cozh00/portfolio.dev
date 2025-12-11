@@ -27,24 +27,20 @@ export const ThemeToggle = () => {
     <div>
       <div className="relative z-50 flex items-center -space-x-1 rounded-lg ml-2">
         <button
-          onClick={() => setIsDarkMode(false)}
-          aria-label="Light mode"
+          onClick={() => setIsDarkMode((prev) => !prev)}
+          aria-label={
+            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+          }
+          title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
           className={cn(
-            "inline-flex h-9 w-9 items-center justify-center rounded-lg text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            "relative z-50 inline-flex h-9 w-9 items-center justify-center rounded-lg",
+            "text-zinc-900 dark:text-zinc-100",
+            "hover:bg-zinc-200 dark:hover:bg-zinc-700",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
+            "ml-2"
           )}
-          title="Light mode"
         >
-          <LuSun />
-        </button>
-        <button
-          onClick={() => setIsDarkMode(true)}
-          aria-label="Dark mode"
-          className={cn(
-            "inline-flex h-9 w-9 items-center justify-center rounded-lg text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-          )}
-          title="Dark mode"
-        >
-          <LuMoon />
+          {isDarkMode ? <LuSun /> : <LuMoon />}
         </button>
       </div>
     </div>

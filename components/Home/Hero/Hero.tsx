@@ -80,19 +80,28 @@ const Hero = () => {
           <div className="mt-8 flex items-center gap-4">
             <div
               className={cn(
-                "w-10 h-10 bg-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:shadow-lg hover:-translate-y-0.5"
+                "w-10 h-10 rounded-full flex justify-center items-center cursor-pointer flex-col hover:shadow-lg hover:-translate-y-0.5 transition-colors duration-300",
+                "bg-foreground text-background",
+                "dark:bg-background dark:text-foreground"
               )}
             >
-              <FaGithub className="text-white w-4 h-4" />
+              <a href="https://github.com/t3cozh00" target="_blank">
+                <FaGithub className="w-4 h-4" />
+              </a>
             </div>
 
             <div
               className={cn(
-                "w-10 h-10 bg-foreground text-foreground rounded-full flex justify-center items-center cursor-pointer flex-col hover:shadow-lg hover:-translate-y-0.5"
+                "w-10 h-10 rounded-full flex justify-center items-center cursor-pointer flex-col hover:shadow-lg hover:-translate-y-0.5 transition-colors duration-300",
+                "bg-foreground text-background",
+                "dark:bg-background dark:text-foreground"
               )}
             >
-              <a href="https://www.linkedin.com/in/congying-zhao-36a29629a/">
-                <FaLinkedin className="text-white w-4 h-4" />
+              <a
+                href="https://www.linkedin.com/in/congying-zhao-36a29629a/"
+                target="_blank"
+              >
+                <FaLinkedin className="w-4 h-4" />
               </a>
             </div>
           </div>
